@@ -1,0 +1,156 @@
+25/05/05 03:15:43 INFO SparkContext: Running Spark version 3.5.4
+25/05/05 03:15:43 INFO SparkContext: OS info Linux, 3.10.0-1160.132.1.el7.x86_64, amd64
+25/05/05 03:15:43 INFO SparkContext: Java version 17.0.4
+25/05/05 03:15:43 WARN NativeCodeLoader: Unable to load native-hadoop library for your platform... using builtin-java classes where applicable
+25/05/05 03:15:43 WARN SparkConf: Note that spark.local.dir will be overridden by the value set by the cluster manager (via SPARK_LOCAL_DIRS in mesos/standalone/kubernetes and LOCAL_DIRS in YARN).
+25/05/05 03:15:43 INFO ResourceUtils: ==============================================================
+25/05/05 03:15:43 INFO ResourceUtils: No custom resources configured for spark.driver.
+25/05/05 03:15:43 INFO ResourceUtils: ==============================================================
+25/05/05 03:15:43 INFO SparkContext: Submitted application: Assignment Question 2
+25/05/05 03:15:43 INFO ResourceProfile: Default ResourceProfile created, executor resources: Map(cores -> name: cores, amount: 1, script: , vendor: , memory -> name: memory, amount: 1024, script: , vendor: , offHeap -> name: offHeap, amount: 0, script: , vendor: ), task resources: Map(cpus -> name: cpus, amount: 1.0)
+25/05/05 03:15:43 INFO ResourceProfile: Limiting resource is cpu
+25/05/05 03:15:43 INFO ResourceProfileManager: Added ResourceProfile id: 0
+25/05/05 03:15:43 INFO SecurityManager: Changing view acls to: acp24lj
+25/05/05 03:15:43 INFO SecurityManager: Changing modify acls to: acp24lj
+25/05/05 03:15:43 INFO SecurityManager: Changing view acls groups to: 
+25/05/05 03:15:43 INFO SecurityManager: Changing modify acls groups to: 
+25/05/05 03:15:43 INFO SecurityManager: SecurityManager: authentication disabled; ui acls disabled; users with view permissions: acp24lj; groups with view permissions: EMPTY; users with modify permissions: acp24lj; groups with modify permissions: EMPTY
+25/05/05 03:15:43 INFO Utils: Successfully started service 'sparkDriver' on port 40020.
+25/05/05 03:15:43 INFO SparkEnv: Registering MapOutputTracker
+25/05/05 03:15:43 INFO SparkEnv: Registering BlockManagerMaster
+25/05/05 03:15:43 INFO BlockManagerMasterEndpoint: Using org.apache.spark.storage.DefaultTopologyMapper for getting topology information
+25/05/05 03:15:43 INFO BlockManagerMasterEndpoint: BlockManagerMasterEndpoint up
+25/05/05 03:15:43 INFO SparkEnv: Registering BlockManagerMasterHeartbeat
+25/05/05 03:15:43 INFO DiskBlockManager: Created local directory at /mnt/parscratch/users/acp24lj/blockmgr-581571d9-22e9-45f5-b2b8-f6e6438e84b4
+25/05/05 03:15:43 INFO MemoryStore: MemoryStore started with capacity 4.6 GiB
+25/05/05 03:15:43 INFO SparkEnv: Registering OutputCommitCoordinator
+25/05/05 03:15:44 INFO JettyUtils: Start Jetty 0.0.0.0:4040 for SparkUI
+25/05/05 03:15:44 INFO Utils: Successfully started service 'SparkUI' on port 4040.
+25/05/05 03:15:44 INFO Executor: Starting executor ID driver on host node141.pri.stanage.alces.network
+25/05/05 03:15:44 INFO Executor: OS info Linux, 3.10.0-1160.132.1.el7.x86_64, amd64
+25/05/05 03:15:44 INFO Executor: Java version 17.0.4
+25/05/05 03:15:44 INFO Executor: Starting executor with user classpath (userClassPathFirst = false): ''
+25/05/05 03:15:44 INFO Executor: Created or updated repl class loader org.apache.spark.util.MutableURLClassLoader@32f0a92b for default.
+25/05/05 03:15:44 INFO Utils: Successfully started service 'org.apache.spark.network.netty.NettyBlockTransferService' on port 42622.
+25/05/05 03:15:44 INFO NettyBlockTransferService: Server created on node141.pri.stanage.alces.network:42622
+25/05/05 03:15:44 INFO BlockManager: Using org.apache.spark.storage.RandomBlockReplicationPolicy for block replication policy
+25/05/05 03:15:44 INFO BlockManagerMaster: Registering BlockManager BlockManagerId(driver, node141.pri.stanage.alces.network, 42622, None)
+25/05/05 03:15:44 INFO BlockManagerMasterEndpoint: Registering block manager node141.pri.stanage.alces.network:42622 with 4.6 GiB RAM, BlockManagerId(driver, node141.pri.stanage.alces.network, 42622, None)
+25/05/05 03:15:44 INFO BlockManagerMaster: Registered BlockManager BlockManagerId(driver, node141.pri.stanage.alces.network, 42622, None)
+25/05/05 03:15:44 INFO BlockManager: Initialized BlockManager: BlockManagerId(driver, node141.pri.stanage.alces.network, 42622, None)
+Loading dataset...
+/users/acp24lj/com6012/assignment/question2.py:39: DeprecationWarning: load_dataset is deprecated and will be removed in a future version.
+  df_pandas = kagglehub.load_dataset(
+Total records: 101766
+Dataset statistics:
+Total: 101766
+Train: 81462 (80.05%)
+Test:  20304 (19.95%)
+
+Class distribution in splits:
+Train:
+  Class 0: 43805 (53.77%)
+  Class 1: 37657 (46.23%)
+Test:
+  Class 0: 11059 (54.47%)
+  Class 1: 9245 (45.53%)
+Fitting feature pipeline...
+Sample of processed features:
++--------------------------+----------+
+|medication_features_vector|readmitted|
++--------------------------+----------+
+|      (94,[0,5,10,15,20...|         1|
+|      (94,[0,5,10,15,20...|         0|
++--------------------------+----------+
+only showing top 2 rows
+
+=============Training Poisson Regression model starts======================
+Running Poisson Regression cross-validation
+25/05/05 03:16:50 INFO SparkContext: Running Spark version 3.5.4
+25/05/05 03:16:50 INFO SparkContext: OS info Linux, 3.10.0-1160.132.1.el7.x86_64, amd64
+25/05/05 03:16:50 INFO SparkContext: Java version 17.0.4
+25/05/05 03:16:51 WARN NativeCodeLoader: Unable to load native-hadoop library for your platform... using builtin-java classes where applicable
+25/05/05 03:16:51 WARN SparkConf: Note that spark.local.dir will be overridden by the value set by the cluster manager (via SPARK_LOCAL_DIRS in mesos/standalone/kubernetes and LOCAL_DIRS in YARN).
+25/05/05 03:16:51 INFO ResourceUtils: ==============================================================
+25/05/05 03:16:51 INFO ResourceUtils: No custom resources configured for spark.driver.
+25/05/05 03:16:51 INFO ResourceUtils: ==============================================================
+25/05/05 03:16:51 INFO SparkContext: Submitted application: Assignment Question 2
+25/05/05 03:16:51 INFO ResourceProfile: Default ResourceProfile created, executor resources: Map(cores -> name: cores, amount: 1, script: , vendor: , memory -> name: memory, amount: 1024, script: , vendor: , offHeap -> name: offHeap, amount: 0, script: , vendor: ), task resources: Map(cpus -> name: cpus, amount: 1.0)
+25/05/05 03:16:51 INFO ResourceProfile: Limiting resource is cpu
+25/05/05 03:16:51 INFO ResourceProfileManager: Added ResourceProfile id: 0
+25/05/05 03:16:51 INFO SecurityManager: Changing view acls to: acp24lj
+25/05/05 03:16:51 INFO SecurityManager: Changing modify acls to: acp24lj
+25/05/05 03:16:51 INFO SecurityManager: Changing view acls groups to: 
+25/05/05 03:16:51 INFO SecurityManager: Changing modify acls groups to: 
+25/05/05 03:16:51 INFO SecurityManager: SecurityManager: authentication disabled; ui acls disabled; users with view permissions: acp24lj; groups with view permissions: EMPTY; users with modify permissions: acp24lj; groups with modify permissions: EMPTY
+25/05/05 03:16:52 INFO Utils: Successfully started service 'sparkDriver' on port 43899.
+25/05/05 03:16:52 INFO SparkEnv: Registering MapOutputTracker
+25/05/05 03:16:52 INFO SparkEnv: Registering BlockManagerMaster
+25/05/05 03:16:52 INFO BlockManagerMasterEndpoint: Using org.apache.spark.storage.DefaultTopologyMapper for getting topology information
+25/05/05 03:16:52 INFO BlockManagerMasterEndpoint: BlockManagerMasterEndpoint up
+25/05/05 03:16:52 INFO SparkEnv: Registering BlockManagerMasterHeartbeat
+25/05/05 03:16:52 INFO DiskBlockManager: Created local directory at /mnt/parscratch/users/acp24lj/blockmgr-60833267-6f36-4c00-b2fa-b4560cd70129
+25/05/05 03:16:52 INFO MemoryStore: MemoryStore started with capacity 4.6 GiB
+25/05/05 03:16:52 INFO SparkEnv: Registering OutputCommitCoordinator
+25/05/05 03:16:52 INFO JettyUtils: Start Jetty 0.0.0.0:4040 for SparkUI
+25/05/05 03:16:52 INFO Utils: Successfully started service 'SparkUI' on port 4040.
+25/05/05 03:16:52 INFO Executor: Starting executor ID driver on host node140.pri.stanage.alces.network
+25/05/05 03:16:52 INFO Executor: OS info Linux, 3.10.0-1160.132.1.el7.x86_64, amd64
+25/05/05 03:16:52 INFO Executor: Java version 17.0.4
+25/05/05 03:16:52 INFO Executor: Starting executor with user classpath (userClassPathFirst = false): ''
+25/05/05 03:16:52 INFO Executor: Created or updated repl class loader org.apache.spark.util.MutableURLClassLoader@17ff893 for default.
+25/05/05 03:16:52 INFO Utils: Successfully started service 'org.apache.spark.network.netty.NettyBlockTransferService' on port 37122.
+25/05/05 03:16:52 INFO NettyBlockTransferService: Server created on node140.pri.stanage.alces.network:37122
+25/05/05 03:16:52 INFO BlockManager: Using org.apache.spark.storage.RandomBlockReplicationPolicy for block replication policy
+25/05/05 03:16:52 INFO BlockManagerMaster: Registering BlockManager BlockManagerId(driver, node140.pri.stanage.alces.network, 37122, None)
+25/05/05 03:16:52 INFO BlockManagerMasterEndpoint: Registering block manager node140.pri.stanage.alces.network:37122 with 4.6 GiB RAM, BlockManagerId(driver, node140.pri.stanage.alces.network, 37122, None)
+25/05/05 03:16:52 INFO BlockManagerMaster: Registered BlockManager BlockManagerId(driver, node140.pri.stanage.alces.network, 37122, None)
+25/05/05 03:16:52 INFO BlockManager: Initialized BlockManager: BlockManagerId(driver, node140.pri.stanage.alces.network, 37122, None)
+Loading dataset...
+/users/acp24lj/com6012/assignment/question2.py:39: DeprecationWarning: load_dataset is deprecated and will be removed in a future version.
+  df_pandas = kagglehub.load_dataset(
+Total records: 101766
+Dataset statistics:
+Total: 101766
+Train: 81462 (80.05%)
+Test:  20304 (19.95%)
+
+Class distribution in splits:
+Train:
+  Class 0: 43805 (53.77%)
+  Class 1: 37657 (46.23%)
+Test:
+  Class 0: 11059 (54.47%)
+  Class 1: 9245 (45.53%)
+Fitting feature pipeline...
+Sample of processed features:
++--------------------------+----------+
+|medication_features_vector|readmitted|
++--------------------------+----------+
+|      (94,[0,5,10,15,20...|         1|
+|      (94,[0,5,10,15,20...|         0|
++--------------------------+----------+
+only showing top 2 rows
+
+=============Training Poisson Regression model starts======================
+Running Poisson Regression cross-validation
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                            Best Poisson Regression parameters:
+Best regParam: 0.001
+Best RMSE: 2.9432
+
+================Training Logistic Regression with L2 Regularisation starts==================
+Running Logistic Regression cross-validation
+Best Logistic Regression with L2 Regularisation parameters:
+Best regParam: 0.1
+Best accuracy: 0.5514
+
+=================Training Logistic Regression model with Elastic Net==================
+Running Elastic Net Logistic Regression cross-validation
+                                                                                                                                                                                                                                                                                                       Best Logistic Regression with Elastic Net parameters:
+Best regParam: 0.001
+Best elasticNetParam: 0.5
+
+Results on test set of all of the best models:
+Poisson Regression RMSE: 2.9182
+Logistic Regression with L2 Regularisation accuracy: 0.5537
+Logistic Regression with Elastic Net accuracy: 0.5538
