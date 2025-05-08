@@ -1,0 +1,77 @@
+Job started at: Wed  7 May 22:36:14 BST 2025
+25/05/07 22:36:18 INFO SparkContext: Running Spark version 3.5.4
+25/05/07 22:36:18 INFO SparkContext: OS info Linux, 3.10.0-1160.133.1.el7.x86_64, amd64
+25/05/07 22:36:18 INFO SparkContext: Java version 17.0.4
+25/05/07 22:36:18 WARN NativeCodeLoader: Unable to load native-hadoop library for your platform... using builtin-java classes where applicable
+25/05/07 22:36:18 WARN SparkConf: Note that spark.local.dir will be overridden by the value set by the cluster manager (via SPARK_LOCAL_DIRS in mesos/standalone/kubernetes and LOCAL_DIRS in YARN).
+25/05/07 22:36:18 INFO ResourceUtils: ==============================================================
+25/05/07 22:36:18 INFO ResourceUtils: No custom resources configured for spark.driver.
+25/05/07 22:36:18 INFO ResourceUtils: ==============================================================
+25/05/07 22:36:18 INFO SparkContext: Submitted application: PUF Classification with Sample Size
+25/05/07 22:36:18 INFO ResourceProfile: Default ResourceProfile created, executor resources: Map(cores -> name: cores, amount: 1, script: , vendor: , memory -> name: memory, amount: 1024, script: , vendor: , offHeap -> name: offHeap, amount: 0, script: , vendor: ), task resources: Map(cpus -> name: cpus, amount: 1.0)
+25/05/07 22:36:18 INFO ResourceProfile: Limiting resource is cpu
+25/05/07 22:36:18 INFO ResourceProfileManager: Added ResourceProfile id: 0
+25/05/07 22:36:18 INFO SecurityManager: Changing view acls to: acp24lj
+25/05/07 22:36:18 INFO SecurityManager: Changing modify acls to: acp24lj
+25/05/07 22:36:18 INFO SecurityManager: Changing view acls groups to: 
+25/05/07 22:36:18 INFO SecurityManager: Changing modify acls groups to: 
+25/05/07 22:36:18 INFO SecurityManager: SecurityManager: authentication disabled; ui acls disabled; users with view permissions: acp24lj; groups with view permissions: EMPTY; users with modify permissions: acp24lj; groups with modify permissions: EMPTY
+25/05/07 22:36:18 INFO Utils: Successfully started service 'sparkDriver' on port 43072.
+25/05/07 22:36:18 INFO SparkEnv: Registering MapOutputTracker
+25/05/07 22:36:19 INFO SparkEnv: Registering BlockManagerMaster
+25/05/07 22:36:19 INFO BlockManagerMasterEndpoint: Using org.apache.spark.storage.DefaultTopologyMapper for getting topology information
+25/05/07 22:36:19 INFO BlockManagerMasterEndpoint: BlockManagerMasterEndpoint up
+25/05/07 22:36:19 INFO SparkEnv: Registering BlockManagerMasterHeartbeat
+25/05/07 22:36:19 INFO DiskBlockManager: Created local directory at /mnt/parscratch/users/acp24lj/blockmgr-daa66be7-b7f2-48d1-a3ed-9b2cd880d159
+25/05/07 22:36:19 INFO MemoryStore: MemoryStore started with capacity 4.6 GiB
+25/05/07 22:36:19 INFO SparkEnv: Registering OutputCommitCoordinator
+25/05/07 22:36:19 INFO JettyUtils: Start Jetty 0.0.0.0:4040 for SparkUI
+25/05/07 22:36:19 INFO Utils: Successfully started service 'SparkUI' on port 4040.
+25/05/07 22:36:19 INFO Executor: Starting executor ID driver on host node036.pri.stanage.alces.network
+25/05/07 22:36:19 INFO Executor: OS info Linux, 3.10.0-1160.133.1.el7.x86_64, amd64
+25/05/07 22:36:19 INFO Executor: Java version 17.0.4
+25/05/07 22:36:19 INFO Executor: Starting executor with user classpath (userClassPathFirst = false): ''
+25/05/07 22:36:19 INFO Executor: Created or updated repl class loader org.apache.spark.util.MutableURLClassLoader@10810fd for default.
+25/05/07 22:36:19 INFO Utils: Successfully started service 'org.apache.spark.network.netty.NettyBlockTransferService' on port 37796.
+25/05/07 22:36:19 INFO NettyBlockTransferService: Server created on node036.pri.stanage.alces.network:37796
+25/05/07 22:36:19 INFO BlockManager: Using org.apache.spark.storage.RandomBlockReplicationPolicy for block replication policy
+25/05/07 22:36:19 INFO BlockManagerMaster: Registering BlockManager BlockManagerId(driver, node036.pri.stanage.alces.network, 37796, None)
+25/05/07 22:36:19 INFO BlockManagerMasterEndpoint: Registering block manager node036.pri.stanage.alces.network:37796 with 4.6 GiB RAM, BlockManagerId(driver, node036.pri.stanage.alces.network, 37796, None)
+25/05/07 22:36:19 INFO BlockManagerMaster: Registered BlockManager BlockManagerId(driver, node036.pri.stanage.alces.network, 37796, None)
+25/05/07 22:36:19 INFO BlockManager: Initialized BlockManager: BlockManagerId(driver, node036.pri.stanage.alces.network, 37796, None)
+============== Start of Question 3b ==============
+
+========== 80.0% Sample Size ==========
+Training set size: 5000000 rows
+Test set size: 1000000 rows
+
+Original class distribution:
+Class -1: 2499151 records
+Class 1: 2500849 records
+
+Sampled dataset size: 4000061 rows (80.0% of original)
+Sampled class distribution:
+Class 1: 2000910 records
+Class 0: 1999151 records
+
+Training Random Forest model...
+RF AUC: 0.4993
+RF Accuracy: 0.4992
+RF Training Time: 385.85 seconds
+
+Training GBT model...
+GBT AUC: 0.4988
+GBT Accuracy: 0.4991
+GBT Training Time: 60.08 seconds
+
+Training MLP model...
+MLP AUC: 0.5007
+MLP Accuracy: 0.4996
+MLP Training Time: 132.11 seconds
+
+Total execution time for 80.0% sample: 578.04 seconds
+Results appended to /users/acp24lj/com6012/assignment/puf_model_scaling_results.csv
+
+Total script execution time: 628.11 seconds
+Job ended at: Wed  7 May 22:46:48 BST 2025
+Execution time: 634 seconds

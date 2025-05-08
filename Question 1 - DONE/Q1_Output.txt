@@ -1,0 +1,88 @@
+Job started at: Tue  6 May 15:19:42 BST 2025
+25/05/06 15:19:49 INFO SparkContext: Running Spark version 3.5.4
+25/05/06 15:19:49 INFO SparkContext: OS info Linux, 3.10.0-1160.132.1.el7.x86_64, amd64
+25/05/06 15:19:49 INFO SparkContext: Java version 17.0.4
+25/05/06 15:19:50 WARN NativeCodeLoader: Unable to load native-hadoop library for your platform... using builtin-java classes where applicable
+25/05/06 15:19:50 WARN SparkConf: Note that spark.local.dir will be overridden by the value set by the cluster manager (via SPARK_LOCAL_DIRS in mesos/standalone/kubernetes and LOCAL_DIRS in YARN).
+25/05/06 15:19:50 INFO ResourceUtils: ==============================================================
+25/05/06 15:19:50 INFO ResourceUtils: No custom resources configured for spark.driver.
+25/05/06 15:19:50 INFO ResourceUtils: ==============================================================
+25/05/06 15:19:50 INFO SparkContext: Submitted application: Question 1
+25/05/06 15:19:50 INFO ResourceProfile: Default ResourceProfile created, executor resources: Map(cores -> name: cores, amount: 1, script: , vendor: , memory -> name: memory, amount: 1024, script: , vendor: , offHeap -> name: offHeap, amount: 0, script: , vendor: ), task resources: Map(cpus -> name: cpus, amount: 1.0)
+25/05/06 15:19:50 INFO ResourceProfile: Limiting resource is cpu
+25/05/06 15:19:50 INFO ResourceProfileManager: Added ResourceProfile id: 0
+25/05/06 15:19:50 INFO SecurityManager: Changing view acls to: acp24lj
+25/05/06 15:19:50 INFO SecurityManager: Changing modify acls to: acp24lj
+25/05/06 15:19:50 INFO SecurityManager: Changing view acls groups to: 
+25/05/06 15:19:50 INFO SecurityManager: Changing modify acls groups to: 
+25/05/06 15:19:50 INFO SecurityManager: SecurityManager: authentication disabled; ui acls disabled; users with view permissions: acp24lj; groups with view permissions: EMPTY; users with modify permissions: acp24lj; groups with modify permissions: EMPTY
+25/05/06 15:19:50 INFO Utils: Successfully started service 'sparkDriver' on port 33333.
+25/05/06 15:19:50 INFO SparkEnv: Registering MapOutputTracker
+25/05/06 15:19:50 INFO SparkEnv: Registering BlockManagerMaster
+25/05/06 15:19:50 INFO BlockManagerMasterEndpoint: Using org.apache.spark.storage.DefaultTopologyMapper for getting topology information
+25/05/06 15:19:50 INFO BlockManagerMasterEndpoint: BlockManagerMasterEndpoint up
+25/05/06 15:19:50 INFO SparkEnv: Registering BlockManagerMasterHeartbeat
+25/05/06 15:19:50 INFO DiskBlockManager: Created local directory at /mnt/parscratch/users/acp24lj/blockmgr-dfe4880b-e5fe-4846-ac27-d099b080d4d4
+25/05/06 15:19:50 INFO MemoryStore: MemoryStore started with capacity 434.4 MiB
+25/05/06 15:19:50 INFO SparkEnv: Registering OutputCommitCoordinator
+25/05/06 15:19:50 INFO JettyUtils: Start Jetty 0.0.0.0:4040 for SparkUI
+25/05/06 15:19:50 INFO Utils: Successfully started service 'SparkUI' on port 4040.
+25/05/06 15:19:51 INFO Executor: Starting executor ID driver on host node051.pri.stanage.alces.network
+25/05/06 15:19:51 INFO Executor: OS info Linux, 3.10.0-1160.132.1.el7.x86_64, amd64
+25/05/06 15:19:51 INFO Executor: Java version 17.0.4
+25/05/06 15:19:51 INFO Executor: Starting executor with user classpath (userClassPathFirst = false): ''
+25/05/06 15:19:51 INFO Executor: Created or updated repl class loader org.apache.spark.util.MutableURLClassLoader@5c71447 for default.
+25/05/06 15:19:51 INFO Utils: Successfully started service 'org.apache.spark.network.netty.NettyBlockTransferService' on port 37324.
+25/05/06 15:19:51 INFO NettyBlockTransferService: Server created on node051.pri.stanage.alces.network:37324
+25/05/06 15:19:51 INFO BlockManager: Using org.apache.spark.storage.RandomBlockReplicationPolicy for block replication policy
+25/05/06 15:19:51 INFO BlockManagerMaster: Registering BlockManager BlockManagerId(driver, node051.pri.stanage.alces.network, 37324, None)
+25/05/06 15:19:51 INFO BlockManagerMasterEndpoint: Registering block manager node051.pri.stanage.alces.network:37324 with 434.4 MiB RAM, BlockManagerId(driver, node051.pri.stanage.alces.network, 37324, None)
+25/05/06 15:19:51 INFO BlockManagerMaster: Registered BlockManager BlockManagerId(driver, node051.pri.stanage.alces.network, 37324, None)
+25/05/06 15:19:51 INFO BlockManager: Initialized BlockManager: BlockManagerId(driver, node051.pri.stanage.alces.network, 37324, None)
+=================Starting Question 1====================
+
+Total requests from academic institutions are as follows:
+The total number of requests from US academic institution is: 218449
+The total number of requests from UK academic institution is: 25009
+The total number of requests from AUS academic institution is: 7004
+
+==============Identifying top 9 unique academic institutions from each country======================
+US unique academic institutions: 759
+Top 9 US institutions:
+  tamu: 6062 requests
+  berkeley: 5439 requests
+  fsu: 4418 requests
+  umn: 4404 requests
+  mit: 3966 requests
+  washington: 3893 requests
+  uiuc: 3750 requests
+  utexas: 3665 requests
+  cmu: 3244 requests
+
+UK unique academic institutions: 141
+Top 9 UK institutions:
+  hensa: 4257 requests
+  rl: 1158 requests
+  ucl: 1036 requests
+  man: 921 requests
+  ic: 851 requests
+  soton: 808 requests
+  bham: 629 requests
+  shef: 623 requests
+  le: 616 requests
+
+Australia unique academic institutions: 48
+Top 9 Australian institutions:
+  monash: 1105 requests
+  rmit: 538 requests
+  unsw: 459 requests
+  gu: 397 requests
+  curtin: 383 requests
+  deakin: 326 requests
+  unimelb: 324 requests
+  cowan: 261 requests
+  utas: 257 requests
+
+Sheffield's rank in the UK academic institutions: 8
+Job ended at: Tue  6 May 15:20:28 BST 2025
+Execution time: 45 seconds

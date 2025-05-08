@@ -1,0 +1,369 @@
+Job started at: Thu  8 May 10:08:12 BST 2025
+25/05/08 10:08:48 INFO SparkContext: Running Spark version 3.5.4
+25/05/08 10:08:48 INFO SparkContext: OS info Linux, 3.10.0-1160.133.1.el7.x86_64, amd64
+25/05/08 10:08:48 INFO SparkContext: Java version 17.0.4
+25/05/08 10:08:48 WARN NativeCodeLoader: Unable to load native-hadoop library for your platform... using builtin-java classes where applicable
+25/05/08 10:08:49 WARN SparkConf: Note that spark.local.dir will be overridden by the value set by the cluster manager (via SPARK_LOCAL_DIRS in mesos/standalone/kubernetes and LOCAL_DIRS in YARN).
+25/05/08 10:08:49 INFO ResourceUtils: ==============================================================
+25/05/08 10:08:49 INFO ResourceUtils: No custom resources configured for spark.driver.
+25/05/08 10:08:49 INFO ResourceUtils: ==============================================================
+25/05/08 10:08:49 INFO SparkContext: Submitted application: Question 4
+25/05/08 10:08:49 INFO ResourceProfile: Default ResourceProfile created, executor resources: Map(cores -> name: cores, amount: 1, script: , vendor: , memory -> name: memory, amount: 1024, script: , vendor: , offHeap -> name: offHeap, amount: 0, script: , vendor: ), task resources: Map(cpus -> name: cpus, amount: 1.0)
+25/05/08 10:08:49 INFO ResourceProfile: Limiting resource is cpu
+25/05/08 10:08:49 INFO ResourceProfileManager: Added ResourceProfile id: 0
+25/05/08 10:08:49 INFO SecurityManager: Changing view acls to: acp24lj
+25/05/08 10:08:49 INFO SecurityManager: Changing modify acls to: acp24lj
+25/05/08 10:08:49 INFO SecurityManager: Changing view acls groups to: 
+25/05/08 10:08:49 INFO SecurityManager: Changing modify acls groups to: 
+25/05/08 10:08:49 INFO SecurityManager: SecurityManager: authentication disabled; ui acls disabled; users with view permissions: acp24lj; groups with view permissions: EMPTY; users with modify permissions: acp24lj; groups with modify permissions: EMPTY
+25/05/08 10:08:50 INFO Utils: Successfully started service 'sparkDriver' on port 45601.
+25/05/08 10:08:50 INFO SparkEnv: Registering MapOutputTracker
+25/05/08 10:08:50 INFO SparkEnv: Registering BlockManagerMaster
+25/05/08 10:08:50 INFO BlockManagerMasterEndpoint: Using org.apache.spark.storage.DefaultTopologyMapper for getting topology information
+25/05/08 10:08:50 INFO BlockManagerMasterEndpoint: BlockManagerMasterEndpoint up
+25/05/08 10:08:50 INFO SparkEnv: Registering BlockManagerMasterHeartbeat
+25/05/08 10:08:50 INFO DiskBlockManager: Created local directory at /mnt/parscratch/users/acp24lj/blockmgr-897d9b2a-9af3-444a-aff7-f32be47bc23d
+25/05/08 10:08:50 INFO MemoryStore: MemoryStore started with capacity 5.8 GiB
+25/05/08 10:08:50 INFO SparkEnv: Registering OutputCommitCoordinator
+25/05/08 10:08:51 INFO JettyUtils: Start Jetty 0.0.0.0:4040 for SparkUI
+25/05/08 10:08:51 INFO Utils: Successfully started service 'SparkUI' on port 4040.
+25/05/08 10:08:51 INFO Executor: Starting executor ID driver on host node035.pri.stanage.alces.network
+25/05/08 10:08:51 INFO Executor: OS info Linux, 3.10.0-1160.133.1.el7.x86_64, amd64
+25/05/08 10:08:51 INFO Executor: Java version 17.0.4
+25/05/08 10:08:51 INFO Executor: Starting executor with user classpath (userClassPathFirst = false): ''
+25/05/08 10:08:51 INFO Executor: Created or updated repl class loader org.apache.spark.util.MutableURLClassLoader@12590e44 for default.
+25/05/08 10:08:51 INFO Utils: Successfully started service 'org.apache.spark.network.netty.NettyBlockTransferService' on port 42121.
+25/05/08 10:08:51 INFO NettyBlockTransferService: Server created on node035.pri.stanage.alces.network:42121
+25/05/08 10:08:51 INFO BlockManager: Using org.apache.spark.storage.RandomBlockReplicationPolicy for block replication policy
+25/05/08 10:08:51 INFO BlockManagerMaster: Registering BlockManager BlockManagerId(driver, node035.pri.stanage.alces.network, 42121, None)
+25/05/08 10:08:51 INFO BlockManagerMasterEndpoint: Registering block manager node035.pri.stanage.alces.network:42121 with 5.8 GiB RAM, BlockManagerId(driver, node035.pri.stanage.alces.network, 42121, None)
+25/05/08 10:08:51 INFO BlockManagerMaster: Registered BlockManager BlockManagerId(driver, node035.pri.stanage.alces.network, 42121, None)
+25/05/08 10:08:51 INFO BlockManager: Initialized BlockManager: BlockManagerId(driver, node035.pri.stanage.alces.network, 42121, None)
++------+-------+------+
+|userId|movieId|rating|
++------+-------+------+
+|1     |296    |5.0   |
+|1     |306    |3.5   |
+|1     |307    |5.0   |
+|1     |665    |5.0   |
+|1     |899    |3.5   |
+|1     |1088   |4.0   |
+|1     |1175   |3.5   |
+|1     |1217   |3.5   |
+|1     |1237   |5.0   |
+|1     |1250   |4.0   |
+|1     |1260   |3.5   |
+|1     |1653   |4.0   |
+|1     |2011   |2.5   |
+|1     |2012   |2.5   |
+|1     |2068   |2.5   |
+|1     |2161   |3.5   |
+|1     |2351   |4.5   |
+|1     |2573   |4.0   |
+|1     |2632   |5.0   |
+|1     |2692   |5.0   |
++------+-------+------+
+only showing top 20 rows
+
+Total number of ratings: 25000095
++------+-------+------+----+
+|userId|movieId|rating|fold|
++------+-------+------+----+
+|1     |296    |5.0   |3   |
+|1     |306    |3.5   |1   |
+|1     |307    |5.0   |2   |
+|1     |665    |5.0   |2   |
+|1     |899    |3.5   |0   |
+|1     |1088   |4.0   |1   |
+|1     |1175   |3.5   |0   |
+|1     |1217   |3.5   |3   |
+|1     |1237   |5.0   |2   |
+|1     |1250   |4.0   |1   |
+|1     |1260   |3.5   |1   |
+|1     |1653   |4.0   |2   |
+|1     |2011   |2.5   |2   |
+|1     |2012   |2.5   |3   |
+|1     |2068   |2.5   |1   |
+|1     |2161   |3.5   |0   |
+|1     |2351   |4.5   |2   |
+|1     |2573   |4.0   |0   |
+|1     |2632   |5.0   |2   |
+|1     |2692   |5.0   |2   |
++------+-------+------+----+
+only showing top 20 rows
+
++----+-------+
+|fold|  count|
++----+-------+
+|   1|6249692|
+|   3|6249565|
+|   2|6251943|
+|   0|6248895|
++----+-------+
+
+
+Processing fold 1/4
+Training ALS model 1 for fold 1
+Model 1 Fold 1 - RMSE: 0.8068008230271737, MAE: 0.6241151721356901
+Training ALS model 2 for fold 1
+Model 2 Fold 1 - RMSE: 0.8012994313330966, MAE: 0.619300610946674
+Training ALS model 3 for fold 1
+Model 3 Fold 1 - RMSE: 1.3218715646634978, MAE: 1.1525655114221582
+
+Processing fold 2/4
+Training ALS model 1 for fold 2
+Model 1 Fold 2 - RMSE: 0.8068998858514103, MAE: 0.6242753775636867
+Training ALS model 2 for fold 2
+Model 2 Fold 2 - RMSE: 0.8012785838803776, MAE: 0.6194360021256761
+Training ALS model 3 for fold 2
+Model 3 Fold 2 - RMSE: 1.3219404822218426, MAE: 1.1527314421048847
+
+Processing fold 3/4
+Training ALS model 1 for fold 3
+Model 1 Fold 3 - RMSE: 0.8058732922531646, MAE: 0.6233861270099926
+Training ALS model 2 for fold 3
+Model 2 Fold 3 - RMSE: 0.8005437160371401, MAE: 0.6187663289494058
+Training ALS model 3 for fold 3
+Model 3 Fold 3 - RMSE: 1.3213195947926264, MAE: 1.1521762453549014
+
+Processing fold 4/4
+Training ALS model 1 for fold 4
+Model 1 Fold 4 - RMSE: 0.8068501757205456, MAE: 0.624249959457652
+Training ALS model 2 for fold 4
+Model 2 Fold 4 - RMSE: 0.8015311749714311, MAE: 0.6196403426291849
+Training ALS model 3 for fold 4
+Model 3 Fold 4 - RMSE: 1.3219667255099083, MAE: 1.1526757518994952
+
+Metrics Table:
+        RMSE Fold 1  RMSE Fold 2  RMSE Fold 3  ...  MAE Fold 4  MAE Mean   MAE Std
+model1     0.806801     0.806900     0.805873  ...    0.624250  0.624007  0.000363
+model2     0.801299     0.801279     0.800544  ...    0.619640  0.619286  0.000323
+model3     1.321872     1.321940     1.321320  ...    1.152676  1.152537  0.000217
+
+[3 rows x 12 columns]
+
+Processing Fold 1/4
+Top 3 clusters (by size) in Fold 1:
++-------+-----+
+|cluster|count|
++-------+-----+
+|15     |5222 |
+|18     |4834 |
+|12     |4648 |
++-------+-----+
+
+
+Cluster 15 in Fold 1:
+Top 3 tags for Cluster 15:
++-----+------------+------------------+
+|tagId|tag         |avg_relevance     |
++-----+------------+------------------+
+|646  |mentor      |0.6085108827085852|
+|742  |original    |0.8013171100362758|
+|972  |storytelling|0.6273821039903266|
++-----+------------+------------------+
+
+Number of movies with each tag in Cluster 15:
+Tag 'mentor' (tagId=646): 1174 movies
+Tag 'original' (tagId=742): 1653 movies
+Tag 'storytelling' (tagId=972): 1184 movies
+
+Cluster 18 in Fold 1:
+Top 3 tags for Cluster 18:
++-----+---------+------------------+
+|tagId|tag      |avg_relevance     |
++-----+---------+------------------+
+|270  |criterion|0.473423645320197 |
+|646  |mentor   |0.5062783251231527|
+|742  |original |0.6788017241379312|
++-----+---------+------------------+
+
+Number of movies with each tag in Cluster 18:
+Tag 'criterion' (tagId=270): 75 movies
+Tag 'mentor' (tagId=646): 81 movies
+Tag 'original' (tagId=742): 200 movies
+
+Cluster 12 in Fold 1:
+Top 3 tags for Cluster 12:
++-----+------------+-------------------+
+|tagId|tag         |avg_relevance      |
++-----+------------+-------------------+
+|468  |great ending|0.47612124999999994|
+|646  |mentor      |0.5213             |
+|742  |original    |0.750385           |
++-----+------------+-------------------+
+
+Number of movies with each tag in Cluster 12:
+Tag 'great ending' (tagId=468): 69 movies
+Tag 'mentor' (tagId=646): 92 movies
+Tag 'original' (tagId=742): 200 movies
+
+Processing Fold 2/4
+Top 3 clusters (by size) in Fold 2:
++-------+-----+
+|cluster|count|
++-------+-----+
+|7      |5493 |
+|1      |4914 |
+|8      |4360 |
++-------+-----+
+
+
+Cluster 7 in Fold 2:
+Top 3 tags for Cluster 7:
++-----+------------+-------------------+
+|tagId|tag         |avg_relevance      |
++-----+------------+-------------------+
+|468  |great ending|0.47260878164556974|
+|646  |mentor      |0.5276139240506328 |
+|742  |original    |0.7477788765822786 |
++-----+------------+-------------------+
+
+Number of movies with each tag in Cluster 7:
+Tag 'great ending' (tagId=468): 219 movies
+Tag 'mentor' (tagId=646): 336 movies
+Tag 'original' (tagId=742): 632 movies
+
+Cluster 1 in Fold 2:
+Top 3 tags for Cluster 1:
++-----+---------+-------------------+
+|tagId|tag      |avg_relevance      |
++-----+---------+-------------------+
+|270  |criterion|0.4630839350180505 |
+|646  |mentor   |0.49783574007220216|
+|742  |original |0.6739440433212995 |
++-----+---------+-------------------+
+
+Number of movies with each tag in Cluster 1:
+Tag 'criterion' (tagId=270): 95 movies
+Tag 'mentor' (tagId=646): 108 movies
+Tag 'original' (tagId=742): 272 movies
+
+Cluster 8 in Fold 2:
+Top 3 tags for Cluster 8:
++-----+-----------+------------------+
+|tagId|tag        |avg_relevance     |
++-----+-----------+------------------+
+|270  |criterion  |0.6223164263645725|
+|640  |melancholic|0.567442070030896 |
+|742  |original   |0.7350383625128734|
++-----+-----------+------------------+
+
+Number of movies with each tag in Cluster 8:
+Tag 'criterion' (tagId=270): 1348 movies
+Tag 'melancholic' (tagId=640): 1102 movies
+Tag 'original' (tagId=742): 1936 movies
+
+Processing Fold 3/4
+Top 3 clusters (by size) in Fold 3:
++-------+-----+
+|cluster|count|
++-------+-----+
+|9      |5698 |
+|14     |5235 |
+|7      |5043 |
++-------+-----+
+
+
+Cluster 9 in Fold 3:
+Top 3 tags for Cluster 9:
++-----+--------+------------------+
+|tagId|tag     |avg_relevance     |
++-----+--------+------------------+
+|323  |drama   |0.5984025647805395|
+|646  |mentor  |0.6122734003172923|
+|742  |original|0.7580018508725545|
++-----+--------+------------------+
+
+Number of movies with each tag in Cluster 9:
+Tag 'drama' (tagId=323): 1236 movies
+Tag 'mentor' (tagId=646): 1331 movies
+Tag 'original' (tagId=742): 1888 movies
+
+Cluster 14 in Fold 3:
+Top 3 tags for Cluster 14:
++-----+--------+------------------+
+|tagId|tag     |avg_relevance     |
++-----+--------+------------------+
+|195  |chase   |0.5980320111343075|
+|646  |mentor  |0.6289925191370911|
+|742  |original|0.7431920668058456|
++-----+--------+------------------+
+
+Number of movies with each tag in Cluster 14:
+Tag 'chase' (tagId=195): 910 movies
+Tag 'mentor' (tagId=646): 1121 movies
+Tag 'original' (tagId=742): 1436 movies
+
+Cluster 7 in Fold 3:
+Top 3 tags for Cluster 7:
++-----+---------+-------------------+
+|tagId|tag      |avg_relevance      |
++-----+---------+-------------------+
+|270  |criterion|0.44691694630872486|
+|646  |mentor   |0.49292030201342274|
+|742  |original |0.6779647651006712 |
++-----+---------+-------------------+
+
+Number of movies with each tag in Cluster 7:
+Tag 'criterion' (tagId=270): 92 movies
+Tag 'mentor' (tagId=646): 112 movies
+Tag 'original' (tagId=742): 295 movies
+
+Processing Fold 4/4
+Top 3 clusters (by size) in Fold 4:
++-------+-----+
+|cluster|count|
++-------+-----+
+|9      |5863 |
+|11     |4692 |
+|10     |4545 |
++-------+-----+
+
+
+Cluster 9 in Fold 4:
+Top 3 tags for Cluster 9:
++-----+------------+------------------+
+|tagId|tag         |avg_relevance     |
++-----+------------+------------------+
+|468  |great ending|0.600418890236507 |
+|646  |mentor      |0.6401613098847786|
+|742  |original    |0.7738060946027898|
++-----+------------+------------------+
+
+Number of movies with each tag in Cluster 9:
+Tag 'great ending' (tagId=468): 1163 movies
+Tag 'mentor' (tagId=646): 1296 movies
+Tag 'original' (tagId=742): 1649 movies
+
+Cluster 11 in Fold 4:
+Top 3 tags for Cluster 11:
++-----+--------+------------------+
+|tagId|tag     |avg_relevance     |
++-----+--------+------------------+
+|195  |chase   |0.5649071955719557|
+|646  |mentor  |0.5897773062730627|
+|742  |original|0.7470907749077491|
++-----+--------+------------------+
+
+Number of movies with each tag in Cluster 11:
+Tag 'chase' (tagId=195): 786 movies
+Tag 'mentor' (tagId=646): 932 movies
+Tag 'original' (tagId=742): 1353 movies
+
+Cluster 10 in Fold 4:
+Top 3 tags for Cluster 10:
++-----+-----------+-------------------+
+|tagId|tag        |avg_relevance      |
++-----+-----------+-------------------+
+|646  |mentor     |0.4926739130434784 |
+|742  |original   |0.7465471014492753 |
+|807  |predictable|0.49768840579710144|
++-----+-----------+-------------------+
+
+Number of movies with each tag in Cluster 10:
+Tag 'mentor' (tagId=646): 25 movies
+Tag 'original' (tagId=742): 69 movies
+Tag 'predictable' (tagId=807): 31 movies
+Job ended at: Thu  8 May 10:26:43 BST 2025
+Execution time: 1111 seconds

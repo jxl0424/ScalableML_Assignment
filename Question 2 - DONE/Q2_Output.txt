@@ -1,0 +1,110 @@
+Job started at: Thu  8 May 00:32:12 BST 2025
+25/05/08 00:32:15 INFO SparkContext: Running Spark version 3.5.4
+25/05/08 00:32:15 INFO SparkContext: OS info Linux, 3.10.0-1160.133.1.el7.x86_64, amd64
+25/05/08 00:32:15 INFO SparkContext: Java version 17.0.4
+25/05/08 00:32:15 WARN NativeCodeLoader: Unable to load native-hadoop library for your platform... using builtin-java classes where applicable
+25/05/08 00:32:16 WARN SparkConf: Note that spark.local.dir will be overridden by the value set by the cluster manager (via SPARK_LOCAL_DIRS in mesos/standalone/kubernetes and LOCAL_DIRS in YARN).
+25/05/08 00:32:16 INFO ResourceUtils: ==============================================================
+25/05/08 00:32:16 INFO ResourceUtils: No custom resources configured for spark.driver.
+25/05/08 00:32:16 INFO ResourceUtils: ==============================================================
+25/05/08 00:32:16 INFO SparkContext: Submitted application: Assignment Question 2
+25/05/08 00:32:16 INFO ResourceProfile: Default ResourceProfile created, executor resources: Map(cores -> name: cores, amount: 1, script: , vendor: , memory -> name: memory, amount: 1024, script: , vendor: , offHeap -> name: offHeap, amount: 0, script: , vendor: ), task resources: Map(cpus -> name: cpus, amount: 1.0)
+25/05/08 00:32:16 INFO ResourceProfile: Limiting resource is cpu
+25/05/08 00:32:16 INFO ResourceProfileManager: Added ResourceProfile id: 0
+25/05/08 00:32:16 INFO SecurityManager: Changing view acls to: acp24lj
+25/05/08 00:32:16 INFO SecurityManager: Changing modify acls to: acp24lj
+25/05/08 00:32:16 INFO SecurityManager: Changing view acls groups to: 
+25/05/08 00:32:16 INFO SecurityManager: Changing modify acls groups to: 
+25/05/08 00:32:16 INFO SecurityManager: SecurityManager: authentication disabled; ui acls disabled; users with view permissions: acp24lj; groups with view permissions: EMPTY; users with modify permissions: acp24lj; groups with modify permissions: EMPTY
+25/05/08 00:32:16 INFO Utils: Successfully started service 'sparkDriver' on port 37570.
+25/05/08 00:32:16 INFO SparkEnv: Registering MapOutputTracker
+25/05/08 00:32:16 INFO SparkEnv: Registering BlockManagerMaster
+25/05/08 00:32:16 INFO BlockManagerMasterEndpoint: Using org.apache.spark.storage.DefaultTopologyMapper for getting topology information
+25/05/08 00:32:16 INFO BlockManagerMasterEndpoint: BlockManagerMasterEndpoint up
+25/05/08 00:32:16 INFO SparkEnv: Registering BlockManagerMasterHeartbeat
+25/05/08 00:32:16 INFO DiskBlockManager: Created local directory at /mnt/parscratch/users/acp24lj/blockmgr-326d55a2-8d64-4fe8-84a2-863596e17c2c
+25/05/08 00:32:16 INFO MemoryStore: MemoryStore started with capacity 2.8 GiB
+25/05/08 00:32:16 INFO SparkEnv: Registering OutputCommitCoordinator
+25/05/08 00:32:16 INFO JettyUtils: Start Jetty 0.0.0.0:4040 for SparkUI
+25/05/08 00:32:16 INFO Utils: Successfully started service 'SparkUI' on port 4040.
+25/05/08 00:32:16 INFO Executor: Starting executor ID driver on host node009.pri.stanage.alces.network
+25/05/08 00:32:16 INFO Executor: OS info Linux, 3.10.0-1160.133.1.el7.x86_64, amd64
+25/05/08 00:32:16 INFO Executor: Java version 17.0.4
+25/05/08 00:32:16 INFO Executor: Starting executor with user classpath (userClassPathFirst = false): ''
+25/05/08 00:32:16 INFO Executor: Created or updated repl class loader org.apache.spark.util.MutableURLClassLoader@22e33996 for default.
+25/05/08 00:32:16 INFO Utils: Successfully started service 'org.apache.spark.network.netty.NettyBlockTransferService' on port 44987.
+25/05/08 00:32:16 INFO NettyBlockTransferService: Server created on node009.pri.stanage.alces.network:44987
+25/05/08 00:32:16 INFO BlockManager: Using org.apache.spark.storage.RandomBlockReplicationPolicy for block replication policy
+25/05/08 00:32:16 INFO BlockManagerMaster: Registering BlockManager BlockManagerId(driver, node009.pri.stanage.alces.network, 44987, None)
+25/05/08 00:32:16 INFO BlockManagerMasterEndpoint: Registering block manager node009.pri.stanage.alces.network:44987 with 2.8 GiB RAM, BlockManagerId(driver, node009.pri.stanage.alces.network, 44987, None)
+25/05/08 00:32:16 INFO BlockManagerMaster: Registered BlockManager BlockManagerId(driver, node009.pri.stanage.alces.network, 44987, None)
+25/05/08 00:32:16 INFO BlockManager: Initialized BlockManager: BlockManagerId(driver, node009.pri.stanage.alces.network, 44987, None)
+
+==================Starting Question 2===================
+Loading dataset...
+/users/acp24lj/com6012/assignment/question2.py:30: DeprecationWarning: load_dataset is deprecated and will be removed in a future version.
+  df_pandas = kagglehub.load_dataset(
+Dataset statistics:
+Total: 101766
+Train: 81462
+Test:  20304
+
+Class distribution in splits:
+Train:
++----------+-----+
+|readmitted|count|
++----------+-----+
+|         1|37657|
+|         0|43805|
++----------+-----+
+
+Test:
++----------+-----+
+|readmitted|count|
++----------+-----+
+|         1| 9245|
+|         0|11059|
++----------+-----+
+
+Sample of processed features:
++--------------------------+----------+
+|medication_features_vector|readmitted|
++--------------------------+----------+
+|      (71,[0,4,8,12,16,...|         1|
+|      (71,[0,4,8,12,16,...|         0|
+|      (71,[0,4,8,12,16,...|         0|
+|      (71,[0,4,8,12,16,...|         0|
+|      (71,[0,4,8,12,16,...|         1|
++--------------------------+----------+
+only showing top 5 rows
+
+=============Training Poisson Regression model starts======================
+Running Poisson Regression cross-validation...
+Best Poisson Regression parameters:
+Best regParam: 0.001
+
+============The metrics of the Poisson Regression Model=========
+Avg metrics for Poisson Regression: [2.9435, 2.9474, 2.9607, 2.9811, 2.9885, 2.9896]
+Standard deviation of metrics for Poisson Regression: [0.006, 0.0043, 0.0019, 0.0006, 0.0009, 0.001]
+
+================Training Logistic Regression with L2 Regularisation model starts==================
+Running Logistic Regression cross-validation....
+Best Logistic Regression with L2 Regularisation parameters:
+Best regParam: 0.01
+================== Metrics of Logistic Regression with L2 Regularisation
+Mean metrics of Logistic Regression with L2 Regularisation: [0.5506, 0.5506, 0.5487, 0.5386, 0.5377, 0.5377]
+Standard deviation of metrics of Logistic Regression with L2 Regularisation: [0.0026, 0.0025, 0.0023, 0.0014, 0.0016, 0.0016]
+
+=================Training Logistic Regression model with Elastic Net==================
+Best Logistic Regression with Elastic Net parameters:
+Best regParam: 0.001
+Best elasticNetParam: 0.8
+Average metrics: [0.5506, 0.5507, 0.551, 0.551, 0.551, 0.5506, 0.5508, 0.5482, 0.5448, 0.5448, 0.5487, 0.5377, 0.5377, 0.5377, 0.5377, 0.5386, 0.5377, 0.5377, 0.5377, 0.5377, 0.5377, 0.5377, 0.5377, 0.5377, 0.5377, 0.5377, 0.5377, 0.5377, 0.5377, 0.5377]
+Standard deviation of metrics: [0.0026, 0.0026, 0.0026, 0.0028, 0.0029, 0.0025, 0.0025, 0.0022, 0.0014, 0.0021, 0.0023, 0.0016, 0.0016, 0.0016, 0.0016, 0.0014, 0.0016, 0.0016, 0.0016, 0.0016, 0.0016, 0.0016, 0.0016, 0.0016, 0.0016, 0.0016, 0.0016, 0.0016, 0.0016, 0.0016]
+
+Results on test set of all of the best models:
+Poisson Regression RMSE: 2.9182
+Logistic Regression with L2 Regularisation accuracy: 0.5534
+Logistic Regression with Elastic Net accuracy: 0.5540
+Job ended at: Thu  8 May 00:35:55 BST 2025
+Execution time: 223 seconds

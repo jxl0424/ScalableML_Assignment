@@ -11,4 +11,12 @@ module load Java/17.0.4
 module load Anaconda3/2024.02-1
 source activate myspark
 
-spark-submit --driver-memory 2g --executor-memory 8g --master local[8] ./question3.py
+echo "Job started at: $(date)"
+start=$(date +%s)
+
+spark-submit --driver-memory 5g --executor-memory 5g --master local[10] ./question3a.py
+
+end=$(date +%s)
+runtime=$((end-start))
+echo "Job ended at: $(date)"
+echo "Execution time: $runtime seconds"

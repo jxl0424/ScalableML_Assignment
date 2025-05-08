@@ -1,0 +1,91 @@
+Job started at: Wed  7 May 00:44:42 BST 2025
+25/05/07 00:44:44 INFO SparkContext: Running Spark version 3.5.4
+25/05/07 00:44:44 INFO SparkContext: OS info Linux, 3.10.0-1160.132.1.el7.x86_64, amd64
+25/05/07 00:44:44 INFO SparkContext: Java version 17.0.4
+25/05/07 00:44:44 WARN NativeCodeLoader: Unable to load native-hadoop library for your platform... using builtin-java classes where applicable
+25/05/07 00:44:44 WARN SparkConf: Note that spark.local.dir will be overridden by the value set by the cluster manager (via SPARK_LOCAL_DIRS in mesos/standalone/kubernetes and LOCAL_DIRS in YARN).
+25/05/07 00:44:45 INFO ResourceUtils: ==============================================================
+25/05/07 00:44:45 INFO ResourceUtils: No custom resources configured for spark.driver.
+25/05/07 00:44:45 INFO ResourceUtils: ==============================================================
+25/05/07 00:44:45 INFO SparkContext: Submitted application: Assignment Question 3A
+25/05/07 00:44:45 INFO ResourceProfile: Default ResourceProfile created, executor resources: Map(cores -> name: cores, amount: 1, script: , vendor: , memory -> name: memory, amount: 2048, script: , vendor: , offHeap -> name: offHeap, amount: 0, script: , vendor: ), task resources: Map(cpus -> name: cpus, amount: 1.0)
+25/05/07 00:44:45 INFO ResourceProfile: Limiting resource is cpu
+25/05/07 00:44:45 INFO ResourceProfileManager: Added ResourceProfile id: 0
+25/05/07 00:44:45 INFO SecurityManager: Changing view acls to: acp24lj
+25/05/07 00:44:45 INFO SecurityManager: Changing modify acls to: acp24lj
+25/05/07 00:44:45 INFO SecurityManager: Changing view acls groups to: 
+25/05/07 00:44:45 INFO SecurityManager: Changing modify acls groups to: 
+25/05/07 00:44:45 INFO SecurityManager: SecurityManager: authentication disabled; ui acls disabled; users with view permissions: acp24lj; groups with view permissions: EMPTY; users with modify permissions: acp24lj; groups with modify permissions: EMPTY
+25/05/07 00:44:45 INFO Utils: Successfully started service 'sparkDriver' on port 44557.
+25/05/07 00:44:45 INFO SparkEnv: Registering MapOutputTracker
+25/05/07 00:44:45 INFO SparkEnv: Registering BlockManagerMaster
+25/05/07 00:44:45 INFO BlockManagerMasterEndpoint: Using org.apache.spark.storage.DefaultTopologyMapper for getting topology information
+25/05/07 00:44:45 INFO BlockManagerMasterEndpoint: BlockManagerMasterEndpoint up
+25/05/07 00:44:45 INFO SparkEnv: Registering BlockManagerMasterHeartbeat
+25/05/07 00:44:45 INFO DiskBlockManager: Created local directory at /mnt/parscratch/users/acp24lj/blockmgr-51b7ee7a-0588-481e-9c56-5552a8e25a2a
+25/05/07 00:44:45 INFO MemoryStore: MemoryStore started with capacity 2.8 GiB
+25/05/07 00:44:45 INFO SparkEnv: Registering OutputCommitCoordinator
+25/05/07 00:44:45 INFO JettyUtils: Start Jetty 0.0.0.0:4040 for SparkUI
+25/05/07 00:44:45 WARN Utils: Service 'SparkUI' could not bind on port 4040. Attempting port 4041.
+25/05/07 00:44:45 WARN Utils: Service 'SparkUI' could not bind on port 4041. Attempting port 4042.
+25/05/07 00:44:45 INFO Utils: Successfully started service 'SparkUI' on port 4042.
+25/05/07 00:44:45 INFO Executor: Starting executor ID driver on host node069.pri.stanage.alces.network
+25/05/07 00:44:45 INFO Executor: OS info Linux, 3.10.0-1160.132.1.el7.x86_64, amd64
+25/05/07 00:44:45 INFO Executor: Java version 17.0.4
+25/05/07 00:44:45 INFO Executor: Starting executor with user classpath (userClassPathFirst = false): ''
+25/05/07 00:44:45 INFO Executor: Created or updated repl class loader org.apache.spark.util.MutableURLClassLoader@7602845a for default.
+25/05/07 00:44:45 INFO Utils: Successfully started service 'org.apache.spark.network.netty.NettyBlockTransferService' on port 44548.
+25/05/07 00:44:45 INFO NettyBlockTransferService: Server created on node069.pri.stanage.alces.network:44548
+25/05/07 00:44:45 INFO BlockManager: Using org.apache.spark.storage.RandomBlockReplicationPolicy for block replication policy
+25/05/07 00:44:45 INFO BlockManagerMaster: Registering BlockManager BlockManagerId(driver, node069.pri.stanage.alces.network, 44548, None)
+25/05/07 00:44:45 INFO BlockManagerMasterEndpoint: Registering block manager node069.pri.stanage.alces.network:44548 with 2.8 GiB RAM, BlockManagerId(driver, node069.pri.stanage.alces.network, 44548, None)
+25/05/07 00:44:45 INFO BlockManagerMaster: Registered BlockManager BlockManagerId(driver, node069.pri.stanage.alces.network, 44548, None)
+25/05/07 00:44:45 INFO BlockManager: Initialized BlockManager: BlockManagerId(driver, node069.pri.stanage.alces.network, 44548, None)
+=======================Start of Question 3A=====================
+Dataset information:
+Training set size: 5000000 rows
+Test set size: 1000000 rows
+
+Original class distribution:
+Class -1: 2499151 records
+Class 1: 2500849 records
+
+Sampled dataset size: 50131 rows (1.00% of original)
+Sampled class distribution:
+Class 1: 25253 records
+Class 0: 24878 records
+
+Starting cross-validation for Random Forest hyperparameter tuning...
+
+Best Random Forest parameters:
+Number of Trees: 20
+Max Depth: 15
+Max Bins: 16
+
+Evaluating Random Forest model on test data
+Final Random Forest model AUC-ROC on test data: 0.5012
+Final Random Forest model Accuracy on test data: 0.5011
+
+Starting cross-validation for Gradient Boosted Trees hyperparameter tuning...
+
+Best Gradient Boosting parameters:
+Max Depth: 5
+Max Iterations: 10
+Step Size (Learning Rate): 0.2
+
+Evaluating model on test data...
+Final Gradient Boosted Trees model AUC-ROC on test data: 0.5010
+Final Gradient Boosted Trees model Accuracy on test data: 0.5006
+
+Starting cross-validation for neural network hyperparameter tuning...
+
+Best Neural Network parameters:
+Layers: [128, 32, 2]
+Max Iterations: 50
+Block Size: 64
+
+Evaluating neural network model on test data...
+Final neural network model AUC-ROC on test data: 0.5016
+Final neural network model Accuracy on test data: 0.5007
+Job ended at: Wed  7 May 01:39:48 BST 2025
+Execution time: 3306 seconds
